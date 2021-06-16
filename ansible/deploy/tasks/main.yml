@@ -1,0 +1,16 @@
+---
+
+- name: Do composer install
+  command: "{{ project_command_for_composer_install }} chdir={{ deploy_helper.new_release_path }}"
+
+- name: Run database migrations
+  command: "bin/console doctrine:migrations:migrate --no-interaction --allow-no-migration --env=prod chdir={{ deploy_helper.new_release_path }}"
+
+- name: Warmup cache
+  command: bin/console cache:warmup
+  args:
+    chdir: "{{ deploy_helper.new_release_path }}"
+  environment: "{{ project_environment }}"
+
+- name: Restart php-fpm
+  shell: sudo /usr/sbin/service php7.4-fpm restart

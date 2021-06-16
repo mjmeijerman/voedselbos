@@ -1,0 +1,9 @@
+---
+
+# APP
+
+application_root: "/home/deploy/voedselbos.markmeijerman.nl"
+application_env: "prod"
+
+project_environment:
+  SYMFONY_ENV: "prod"
