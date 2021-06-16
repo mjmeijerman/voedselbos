@@ -10,11 +10,32 @@
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
+.phpunit
 .phpunit.result.cache
 /phpunit.xml
 ###< symfony/phpunit-bridge ###
 
-###> phpunit/phpunit ###
-/phpunit.xml
-.phpunit.result.cache
-###< phpunit/phpunit ###
+!.idea
+.idea/*
+!.idea/codeStyles
+
+config/packages/parameters.yaml
+.env
+
+.vagrant
+
+/public/uploads/*
+!/public/uploads/privacy.pdf
+!/public/uploads/.gitkeep
+!/public/uploads/clubblad/.gitkeep
+!/public/uploads/files/.gitkeep
+!/public/uploads/formulieren/.gitkeep
+!/public/uploads/fotos/.gitkeep
+!/public/uploads/selectiefotos/.gitkeep
+!/public/uploads/vloermuziek/.gitkeep
+!/public/uploads/wedstrijduitslagen/.gitkeep
+
+/public/adminuploads/*
+!/public/adminuploads/.gitkeep
+
+*__pycache__*
