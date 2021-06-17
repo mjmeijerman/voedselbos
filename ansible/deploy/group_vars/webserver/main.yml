@@ -9,6 +9,8 @@ nginx_user: www-data
 application_root: ~
 php_socket: "{{ php7_fpm_pool_listen }}"
 
+project_command_for_composer_install: "{{ project_composer_binary }} install --no-ansi --no-dev --no-interaction --no-progress --optimize-autoloader"
+
 project_shared_children:
   - path: "/var/sessions"
     src: "sessions"
