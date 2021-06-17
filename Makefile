@@ -2,16 +2,16 @@ SHELL=/bin/bash
 
 .DEFAULT_GOAL := help
 
-## release:	Checkout trunk, get most recent version, create new (minor) tag, push master and tags
+## release:	Checkout trunk, get most recent version, create new (minor) tag, push trunk and tags
 .PHONY: release
 release:
 	git checkout trunk
 	git pull
 	bin/bump-tag.sh
-	git push origin master && git push --tags
+	git push origin trunk && git push --tags
 	./deploy
 
-## branch:	Checkout trunk, get most recent version, create new branch based on master
+## branch:	Checkout trunk, get most recent version, create new branch based on trunk
 .PHONY: branch
 branch:
 	git checkout trunk
